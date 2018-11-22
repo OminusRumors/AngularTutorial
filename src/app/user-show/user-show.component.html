@@ -1,0 +1,16 @@
+<h1>Overview of details for user {{ user.name }}</h1>
+<div *ngIf="user">
+
+  id: {{ user.id }} <br />
+  name: {{ user.name }} <br />
+  email: {{ user.email }} <br />
+  likes: {{likes}}
+  dislikes: {{dislikes}}
+
+  <app-posts [posts]="user.posts" (voted)="onVoted($event);" (unvoted)="onUnvoted($event);"></app-posts>
+
+  <button class="edit" [routerLink]="['/users', 'edit', user.id]">Edit</button>
+  <button class="delete" (click)="delete();">Delete</button>
+
+</div>
+<router-outlet></router-outlet>

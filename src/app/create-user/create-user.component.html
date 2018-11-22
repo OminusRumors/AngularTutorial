@@ -1,0 +1,11 @@
+<p>
+  create-user works!
+</p>
+<div>
+  <label>firstNam: <input [(ngModel)]="user.firstName" placeholder="first name" /></label>
+  <label>lastName:<input [(ngModel)]="user.lastName" placeholder="last name" /></label>
+
+  <input type="button" (click)="create()" value="Create user">
+</div>
+
+<router-outlet></router-outlet>
